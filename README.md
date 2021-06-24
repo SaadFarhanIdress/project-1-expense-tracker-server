@@ -18,4 +18,4 @@ PORT
 This project is under work.
 
 
-**Please star this repo. :)**
+**Please star this repo. 😊**
