@@ -8,8 +8,8 @@ OR
 npm i
 ```
 
+# ENV file:
 ```bash
-ENV file:
 MONGODB_CONNECT
 PORT
 ```
