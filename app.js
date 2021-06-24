@@ -6,6 +6,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const postRoutes = require('./modules/post/postRoutes');
 const { connectionWithDB } = require('./helpers/connectToDB');
 
 dotenv.config({ path: './config.env' })
@@ -13,6 +14,7 @@ dotenv.config({ path: './config.env' })
 app.use(bodyParser.json())
 app.use(cors())
 
+app.use("/posts", postRoutes)
 
 app.listen(port, (err) => {
     if (err) {
