@@ -1,6 +1,6 @@
 # If you wanna clone this repo
 1) Clone it
-2) Then run this command on the project's root directory
+2) Then run the following command on the project's root directory
 
 ```bash
 yarn add 
