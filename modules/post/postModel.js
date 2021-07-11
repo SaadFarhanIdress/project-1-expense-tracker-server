@@ -18,7 +18,7 @@ const PostSchema = new mongoose.Schema({
 const PostModel = new mongoose.model("posts", PostSchema)
 
 module.exports.addPostToDB = (data) => {
-    let model = new PostModel(data)
+    let model = req.body;
 
     return new Promise((resolve, reject) => {
         model.save((err, doc) => {
