@@ -21,5 +21,11 @@ module.exports.addPost = (req, res) => {
 }
 
 module.exports.deletePost = (req, res) => {
-    res.send("Hi!");
+        PostModel.deletePostFromDB(req.params.id)
+        .then(resp => {
+            res.send({ status: true })
+        })
+        .catch(e => {
+            res.send({ status: false, e })
+        })
 }
