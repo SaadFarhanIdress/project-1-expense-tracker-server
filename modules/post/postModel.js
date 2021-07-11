@@ -45,7 +45,7 @@ module.exports.getPostsFromDB = () => {
 
 module.exports.deletePostFromDB = (id) => {
     return new Promise((resolve, reject) => {
-        PostModel.delete(id, (err, success) => {
+        PostModel.deleteOne(id, (err, success) => {
             if (err) {
                 console.log(err);
                 return reject(err);
