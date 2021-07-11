@@ -13,7 +13,7 @@ module.exports.getPost = (req, res) => {
 module.exports.addPost = (req, res) => {
     PostModel.addPostToDB(req.body)
         .then(resp => {
-            res.send({ status: true, resp })
+            res.send({ status: true, doc: resp })
         })
         .catch(e => {
             res.send({ status: false, e })
