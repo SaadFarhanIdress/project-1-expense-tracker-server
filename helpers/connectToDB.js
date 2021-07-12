@@ -1,10 +1,8 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 
-dotenv.config();
-
 module.exports.connectionWithDB = () => {
-    mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true, useUnifiedTopology: true });
+    mongoose.connect("mongodb+srv://saadfarhan_123:saadfarhan_123@cluster0.aglon.mongodb.net/transactions?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
 
     const db = mongoose.connection;
     db.on('error', (err) => {
