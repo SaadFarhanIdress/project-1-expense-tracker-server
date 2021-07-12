@@ -33,24 +33,24 @@ module.exports.addPostToDB = (data) => {
 
 module.exports.getPostsFromDB = () => {
     return new Promise((resolve, reject) => {
-        PostModel.find({}, (err, docs) => {
+        PostModel.find({}, ((err, docs) => {
             if (err) {
                 console.log(err);
                 return reject(err);
             }
             resolve(docs);
-        })
+        }))
     })
 }
 
 module.exports.deletePostFromDB = (id) => {
     return new Promise((resolve, reject) => {
-        PostModel.deleteOne(id, (err, success) => {
+        PostModel.deleteOne({_id: id}, ((err, success) => {
             if (err) {
                 console.log(err);
                 return reject(err);
             }
             resolve(success)
-        })
+        }))
     })
 }
