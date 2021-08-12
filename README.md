@@ -14,8 +14,4 @@ MONGODB_CONNECT
 PORT
 ```
 
-# Note
-This project is under work.
-
-
 # Please star this repo. 😊
