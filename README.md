@@ -1,17 +1,35 @@
-# If you wanna clone this repo
-1) Clone it
-2) Then run the following command on the project's root directory
+# Expense Tracker using React Context API and TypeScript
+<img src="./preview.png" />
 
+## Setup
+
+- Clone this repository:
 ```bash
-yarn add 
-OR 
-npm i
+git clone https://github.com/SaadFarhanIdress/expense-tracker-ts-mern
 ```
-
-# ENV file:
+- Go to root directory of repository and install dependencies:
+```bash 
+cd expense-tracker-ts-mern
+npm install
+cd client 
+npm install
+cd ..
+```
+- Running Scripts
 ```bash
-MONGODB_CONNECT
-PORT
-```
+# Run front and backend
+npm run dev
+ 
+# Backend only
+npm run server
+ 
+# Frontend only
+npm run client
+ 
+# Build client
+cd client
+npm run build
 
-# Please star this repo. 😊
+# Prod
+npm start
+```
