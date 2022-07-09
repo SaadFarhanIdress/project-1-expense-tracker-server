@@ -37,5 +37,5 @@
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6"
   },
-  "proxy": "http://localhost:4000/api/v1"
+  "proxy": "https://expensetracker347.herokuapp.com/api/v1"
 }

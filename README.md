@@ -1,5 +1,5 @@
 # Expense Tracker using React Context API and TypeScript
-<img src="./preview.png" />
+<img src="./preview.gif" />
 
 ## Setup
 
