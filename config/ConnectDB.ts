@@ -1,7 +1,7 @@
 import { connect, connection } from 'mongoose';
 
 export default function ConnectDB() {
-    connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_SERVER}.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`, {
+    connect(process.env.MONGODB_URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     });
