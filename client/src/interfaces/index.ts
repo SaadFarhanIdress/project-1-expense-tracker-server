@@ -4,7 +4,7 @@ export interface ITransaction {
     _id: string;
     description: string;
     amount: number;
-    postedAt: any;
+    postedAt: string;
 }
 
 export interface IInitialState {
