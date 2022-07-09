@@ -1,4 +1,3 @@
-  
 # This is a basic workflow to help you get started with Actions
 
 name: React App Deploy to Surge
@@ -7,9 +6,9 @@ name: React App Deploy to Surge
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -20,23 +19,23 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
-    
-    - name: Install NodeJS
-      uses: actions/setup-node@v2-beta
-      with:
-        node-version: 12
-    
-    - uses: borales/actions-yarn@v2.0.0
-      with:
-        cmd: install # will run `yarn install` command
-        
-    - name: Build React App
-      run: yarn build
-      
-    - name: Install Surge
-      run: npm install --global surge
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
-    - name: Deploy to Surge
-      run: surge ./build expense-tracker-by-saad-farhan.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+      - name: Install NodeJS
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: 12
+
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install # will run `yarn install` command
+
+      - name: Build React App
+        run: yarn build
+
+      - name: Install Surge
+        run: npm install --global surge
+
+      - name: Deploy to Surge
+        run: surge ./build expense-tracker-ts-mern.surge.sh --token ${{ secrets.SURGE_TOKEN }}
