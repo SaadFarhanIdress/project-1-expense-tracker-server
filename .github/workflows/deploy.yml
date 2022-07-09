@@ -22,6 +22,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Go to client directory
+        run: cd client
+
       - name: Install NodeJS
         uses: actions/setup-node@v2-beta
         with:
