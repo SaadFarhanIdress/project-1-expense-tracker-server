@@ -5,6 +5,7 @@
 * {
   box-sizing: border-box;
   color: black;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -19,7 +20,6 @@ body {
   background-attachment: fixed;
   background-size: cover;
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
 }
 
 .container {
@@ -167,21 +167,23 @@ hr {
 }
 
 .delete-btn {
-  cursor: pointer;
-  background-color: #e74c3c;
-  border: 0;
-  color: white;
-  font-size: 20px;
-  line-height: 20px;
-  padding: 2px 5px;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translate(-100%, -50%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  background-color: transparent;
+  border: none;
+  padding: 0px 10px 0px 0px;
+  margin: 0px;
+  transition-duration: 20ms;
+}
+
+.delete-btn:hover, .delete-btn:focus {
+  text-decoration: underline;
+  background-color: transparent;
+  color: black;
 }
 
 .list li:hover .delete-btn {
   opacity: 1;
+}
+
+p {
+  text-align: center;
 }

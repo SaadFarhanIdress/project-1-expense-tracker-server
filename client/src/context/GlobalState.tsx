@@ -4,12 +4,7 @@ import axios from 'axios';
 import { IDispatch, IFunctions, IInitialState, ITransaction } from "../interfaces";
 
 const initialState = {
-    transactions: [{
-        _id: '',
-        description: '',
-        amount: 0,
-        postedAt: ''
-    }],
+    transactions: [],
     error: null,
     loading: true,
 }
