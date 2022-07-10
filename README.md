@@ -36,7 +36,7 @@ NODE_ENV=development
 - Rename `./client/src/context/.env_prod` to `.env` and change the `SERVER_URL` env if you want:
 ```bash
 # ./client/.env_prod
-SERVER_URL=http://localhost:4000
+REACT_APP_SERVER_URL=http://localhost:4000
 ```
 Running Scripts
 ```bash
