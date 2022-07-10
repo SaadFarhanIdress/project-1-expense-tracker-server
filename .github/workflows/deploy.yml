@@ -25,9 +25,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - name: Go to the client directory
-        run: cd client
-
       - name: Install NodeJS
         uses: actions/setup-node@v3
         with:
@@ -39,9 +36,12 @@ jobs:
 
       - name: Build React App
         run: npm build
+        working-directory: client
 
       - name: Install Surge
         run: npm install --global surge
+        working-directory: client
 
       - name: Deploy to Surge
         run: surge ./build expense-tracker-ts-mern.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+        working-directory: client
