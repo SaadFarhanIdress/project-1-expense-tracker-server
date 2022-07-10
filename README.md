@@ -1,7 +1,10 @@
-# Expense Tracker using React Context API and TypeScript
+# Expense Tracker
 
 ## [Live Site](https://expense-tracker-ts-mern.surge.sh)
 <img src="./preview.gif" />
+
+## Introduction
+Full-stack Expense Tracker App using React Context API on frontend and Express & MongoDB on backend, all with TypeScript.
 
 ## Setup
 
