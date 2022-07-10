@@ -35,7 +35,7 @@ jobs:
           cmd: install # will run `yarn install` command
 
       - name: Build React App
-        run: npm build
+        run: npm run-script build
         working-directory: client
 
       - name: Install Surge
