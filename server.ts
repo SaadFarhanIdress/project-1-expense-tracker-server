@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 import morgan from 'morgan';
 import ConnectDB from './config/ConnectDB';
 
-dotenv.config({ path: __dirname + '/config/config.env' })
+dotenv.config({ path: __dirname + '/config/.env' })
 
 ConnectDB();
 

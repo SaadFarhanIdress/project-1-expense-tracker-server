@@ -14,6 +14,10 @@ const initialState = {
     loading: true,
 }
 
+const serverurl = process.env.REACT_APP_SERVER_URL;
+
+console.log(serverurl)
+
 export const GlobalContext = createContext<{
     state: IInitialState;
     dispatch: IDispatch;
@@ -36,7 +40,7 @@ export const GlobalProvider = ({
     const [state, dispatch] = useReducer(AppReducer, initialState)
     async function getTransactions() {
         try {
-            const res = await axios.get(`/transactions`);
+            const res = await axios.get(`${serverurl}/transactions`);
             if (res.data.status) {
                 return dispatch({
                     type: 'GET_TRANSACTIONS',
@@ -53,7 +57,7 @@ export const GlobalProvider = ({
 
     async function deleteTransaction(id: string) {
         try {
-            const res = await axios.delete(`/transactions/${id}`);
+            const res = await axios.delete(`${serverurl}/transactions/${id}`);
             if (res.data.status) {
                 return dispatch({
                     type: "DELETE_TRANSACTION",
@@ -70,7 +74,7 @@ export const GlobalProvider = ({
 
     async function addTransaction(transaction: ITransaction) {
         try {
-            const res = await axios.post('/transactions', transaction);
+            const res = await axios.post(`${serverurl}/transactions`, transaction);
             if (res.data.status) {
                 return dispatch({
                     type: 'ADD_TRANSACTION',

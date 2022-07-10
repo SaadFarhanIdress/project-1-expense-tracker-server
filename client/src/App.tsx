@@ -6,6 +6,8 @@ import { TransactionHistory } from "./components/TransactionHistory";
 import { TransactionForm } from "./components/TransactionForm";
 import { GlobalProvider } from "./context/GlobalState";
 
+
+
 function App() {
   return (
     <GlobalProvider>
