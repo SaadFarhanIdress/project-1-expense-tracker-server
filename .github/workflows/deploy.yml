@@ -32,7 +32,7 @@ jobs:
 
       - uses: borales/actions-yarn@v3.0.0
         with:
-          cmd: cd client && install # will run `yarn install` command
+          cmd: install # will run `yarn install` command
 
       - name: Build React App
         run: cd client && npm build
