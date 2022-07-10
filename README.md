@@ -25,7 +25,7 @@ mongodb+srv://{dbUsername}:{dbPassword}@{dbServername}.mongodb.net/{dbName}?retr
 ```
 - Set the `./config/.env_prod` file according to the following and rename it to `.env`:
 ```bash
-# ./config/prod.env
+# ./config/prod_env
 DB_USERNAME=dbUsername
 DB_PASSWORD=dbPassword
 DB_SERVER=dbServername
