@@ -21,7 +21,8 @@ export const Transaction: React.FC<ITransactionProps> = ({ transaction }) => {
             description: prompt('Enter description', transaction.description),
             amount: Number(prompt('Enter amount', transaction.amount.toString()))
         }
-        updateTransaction(id, newTransInfo)
+        if (newTransInfo.amount && newTransInfo.description) updateTransaction(id, newTransInfo)
+        alert("Please enter valid description and amount.")
     }
 
     return (
@@ -44,7 +45,7 @@ export const Transaction: React.FC<ITransactionProps> = ({ transaction }) => {
                     >
                         Update
                     </button>
-                    <span>{sign}${Math.abs(numberWithCommas(transaction.amount))}</span>
+                    <span>{sign}${numberWithCommas(Math.abs(transaction.amount))}</span>
                 </div>
             </li>
         </div>
