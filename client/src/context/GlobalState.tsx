@@ -4,14 +4,8 @@ import axios from 'axios';
 import { IDispatch, IFunctions, IInitialState, ITransaction } from "../interfaces";
 
 const initialState = {
-    transactions: [{
-        _id: '',
-        description: '',
-        amount: 0,
-        postedAt: ''
-    }],
-    error: null,
-    loading: true,
+    transactions: [],
+    error: null
 }
 
 const serverurl = process.env.REACT_APP_SERVER_URL;
@@ -43,7 +37,7 @@ export const GlobalProvider = ({
             if (res.data.status) {
                 return dispatch({
                     type: 'GET_TRANSACTIONS',
-                    payload: res.data.transactions
+                    payload: res.data.transactions,
                 })
             }
         } catch (error) {

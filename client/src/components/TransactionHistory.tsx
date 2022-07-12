@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { GlobalContext } from '../context/GlobalState';
 import { Transaction } from './Transaction';
 
@@ -14,9 +14,13 @@ export const TransactionHistory = () => {
         <>
             <h3>History</h3>
             <ul className="list">
-                {transactions.map((transaction, idx) => (
-                    <Transaction key={idx} transaction={transaction} />
-                ))}
+                {
+                    transactions.length ?
+                        transactions.map((transaction, idx) => (
+                            <Transaction key={idx} transaction={transaction} />
+                        )) :
+                        <p>No transactions</p>
+                }
             </ul>
         </>
     )

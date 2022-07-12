@@ -174,13 +174,6 @@ hr {
   border-right: 5px solid #c0392b;
 }
 
-.icon {
-  background-color: transparent;
-  border: none;
-  width: 15px;
-  margin-right: 10px;
-}
-
 .list li:hover {
   opacity: 1;
 }

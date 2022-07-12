@@ -5,7 +5,6 @@ const AppReducer = (state: IInitialState, action: Action) => {
         case 'GET_TRANSACTIONS':
             return {
                 ...state,
-                loading: false,
                 transactions: action.payload
             }
         case 'DELETE_TRANSACTION':
@@ -17,7 +16,7 @@ const AppReducer = (state: IInitialState, action: Action) => {
         case 'ADD_TRANSACTION':
             return {
                 ...state,
-                transactions: [...state.transactions, action.payload]
+                transactions: [...state.transactions, action.payload],
             }
         case 'UPDATE_TRANSACTION':
             return {

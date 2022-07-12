@@ -10,7 +10,6 @@ export interface ITransaction {
 export interface IInitialState {
     transactions: ITransaction[],
     error: any;
-    loading: boolean;
 }
 
 export type Action =
