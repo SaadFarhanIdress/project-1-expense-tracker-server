@@ -4,14 +4,17 @@ import axios from 'axios';
 import { IDispatch, IFunctions, IInitialState, ITransaction } from "../interfaces";
 
 const initialState = {
-    transactions: [],
+    transactions: [{
+        _id: '',
+        description: '',
+        amount: 0,
+        postedAt: ''
+    }],
     error: null,
     loading: true,
 }
 
 const serverurl = process.env.REACT_APP_SERVER_URL;
-
-console.log(serverurl)
 
 export const GlobalContext = createContext<{
     state: IInitialState;
@@ -23,7 +26,8 @@ export const GlobalContext = createContext<{
     functions: {
         getTransactions: () => { },
         deleteTransaction: () => { },
-        addTransaction: () => { }
+        addTransaction: () => { },
+        updateTransaction: () => { },
     }
 });
 
@@ -83,6 +87,25 @@ export const GlobalProvider = ({
             })
         }
     }
+
+    async function updateTransaction(id: string, transaction: ITransaction) {
+        console.log(`${serverurl}/transactions/${id}`, transaction);
+        try {
+            const res = await axios.put(`${serverurl}/transactions/${id}`, transaction);
+            if (res.data.status) {
+                return dispatch({
+                    type: 'UPDATE_TRANSACTION',
+                    payload: res.data.transaction
+                })
+            }
+        } catch (error) {
+            return dispatch({
+                type: 'TRANSACTION_ERROR',
+                payload: error
+            })
+        }
+    }
+
     return (
         <GlobalContext.Provider value={{
             state,
@@ -90,7 +113,8 @@ export const GlobalProvider = ({
             functions: {
                 getTransactions,
                 deleteTransaction,
-                addTransaction
+                addTransaction,
+                updateTransaction
             }
         }}>
             {children}

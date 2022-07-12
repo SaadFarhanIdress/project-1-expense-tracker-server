@@ -19,6 +19,12 @@ const AppReducer = (state: IInitialState, action: Action) => {
                 ...state,
                 transactions: [...state.transactions, action.payload]
             }
+        case 'UPDATE_TRANSACTION':
+            return {
+                ...state,
+                transactions: state.transactions.filter((transaction, idx) =>
+                    transaction._id === action.payload._id ? state.transactions[idx] = action.payload : transaction)
+            }
         case 'TRANSACTION_ERROR':
             return {
                 ...state,

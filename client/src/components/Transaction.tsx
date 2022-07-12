@@ -8,14 +8,42 @@ interface ITransactionProps {
 }
 
 export const Transaction: React.FC<ITransactionProps> = ({ transaction }) => {
-    const { functions: { deleteTransaction } } = React.useContext(GlobalContext)
+
+    const { functions: { deleteTransaction, updateTransaction } } = React.useContext(GlobalContext);
+
     const sign = transaction.amount < 0 ? '-' : '+';
+
+    const doUpdateTransaction = (transaction: {
+        description: string;
+        amount: number;
+    }, id: string) => {
+        const newTransInfo = {
+            description: prompt('Enter description', transaction.description),
+            amount: Number(prompt('Enter amount', transaction.amount.toString()))
+        }
+        updateTransaction(id, newTransInfo)
+    }
+
     return (
         <div>
             <li className={transaction.amount < 0 ? 'minus' : 'plus'}>
                 {transaction.description}
                 <div>
-                    <button onClick={() => deleteTransaction(transaction._id)} className="delete-btn">Delete</button>
+                    <button
+                        className="option-btn"
+                        onClick={() => deleteTransaction(transaction._id)}
+                    >
+                        Delete
+                    </button>
+                    <button
+                        className="option-btn"
+                        onClick={() => doUpdateTransaction(
+                            { description: transaction.description, amount: transaction.amount },
+                            transaction._id
+                        )}
+                    >
+                        Update
+                    </button>
                     <span>{sign}${Math.abs(numberWithCommas(transaction.amount))}</span>
                 </div>
             </li>

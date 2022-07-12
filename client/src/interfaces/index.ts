@@ -18,6 +18,7 @@ export type Action =
     | { type: 'DELETE_TRANSACTION'; payload: string; }
     | { type: 'ADD_TRANSACTION'; payload: ITransaction }
     | { type: 'TRANSACTION_ERROR'; payload: any }
+    | { type: 'UPDATE_TRANSACTION'; payload: ITransaction }
 
 export type IDispatch = Dispatch<Action>
 
@@ -25,4 +26,5 @@ export interface IFunctions {
     addTransaction: Function;
     getTransactions: Function;
     deleteTransaction: Function;
+    updateTransaction: Function;
 }

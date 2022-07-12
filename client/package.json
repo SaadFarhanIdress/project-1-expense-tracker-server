@@ -1,8 +1,20 @@
 {
   "name": "expense-tracker",
   "version": "0.1.0",
+  "description": "Expense Tracker Frontend with React Context API and TypeScript",
+  "author": "SaadFarhanIdress",
+  "license": "MIT",
+  "keywords": [
+    "Expense Tracker",
+    "React Context API",
+    "TypeScript"
+  ],
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-regular-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "axios": "^0.21.1",
     "dotenv": "^16.0.1",
     "react": "^17.0.1",

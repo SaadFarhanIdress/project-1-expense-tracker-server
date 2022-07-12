@@ -2,14 +2,30 @@
   "name": "expense-tracker-mern",
   "version": "1.0.0",
   "description": "Backend for expense tracker",
+  "main": "server.ts",
+  "author": "Saad Farhan",
+  "license": "MIT",
+  "keywords": [
+    "Expense Tracker",
+    "TypeScript",
+    "Express",
+    "MongoDB",
+    "Mongoose"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaadFarhanIdress/expense-tracker-ts-mern.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SaadFarhanIdress/expense-tracker-ts-mern/issues"
+  },
+  "homepage": "https://github.com/SaadFarhanIdress/expense-tracker-ts-mern#readme",
   "scripts": {
     "start": "nodemon server.ts",
     "server": "nodemon server.ts",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "author": "Saad Farhan",
-  "license": "MIT",
   "dependencies": {
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
