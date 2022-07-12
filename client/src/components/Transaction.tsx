@@ -21,8 +21,8 @@ export const Transaction: React.FC<ITransactionProps> = ({ transaction }) => {
             description: prompt('Enter description', transaction.description),
             amount: Number(prompt('Enter amount', transaction.amount.toString()))
         }
-        if (newTransInfo.amount && newTransInfo.description) updateTransaction(id, newTransInfo)
-        alert("Please enter valid description and amount.")
+        if (newTransInfo.amount && newTransInfo.description) return updateTransaction(id, newTransInfo)
+        else return alert("Please enter valid description and amount.");
     }
 
     return (
